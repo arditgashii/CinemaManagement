@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ViewsComponent } from './views.component';
+import { ViewsRoutingModule } from './views-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +11,9 @@ import { ViewsComponent } from './views.component';
     ViewsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ViewsRoutingModule,
+    RouterModule
   ]
 })
 export class ViewsModule { }
