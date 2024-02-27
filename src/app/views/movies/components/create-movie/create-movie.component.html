@@ -1,1 +1,28 @@
-<p>create-movie works!</p>
+<div class="create-movie-form">
+    <form [formGroup]="createMovieForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" formControlName="title" required>
+        </div>
+        <div class="form-group">
+          <label for="categoryId">Name of Category:</label>
+          <select id="categoryId" formControlName="categoryId" required>
+            <option *ngFor="let category of categoryList" [value]="category.id">{{ category.categoryName }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" (change)="onFileChange($event)" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Paragraph:</label>
+            <input type="text" id="paragraph" formControlName="paragraph" required>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" [disabled]="!createMovieForm.valid">Create Movie</button>
+    </form>
+  </div>
+  

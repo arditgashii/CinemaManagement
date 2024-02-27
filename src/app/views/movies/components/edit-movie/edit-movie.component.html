@@ -1,1 +1,15 @@
-<p>edit-movie works!</p>
+<div class="main-content">
+    <form [formGroup]="editMovieForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Task Title:</label>
+        <input type="text" id="title" formControlName="title" required>
+      </div>
+      <div class="form-group">
+        <label for="categoryId">Title:</label>
+        <select id="categoryId" formControlName="categoryId" required>
+            <option *ngFor="let category of categoryList" [value]="category.id">{{ category.categoryName }}</option>
+        </select>
+    </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!editMovieForm.valid">Update Task</button>
+    </form>
+  </div>

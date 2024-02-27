@@ -1,1 +1,44 @@
-<p>all-movies works!</p>
+<div class="main-content">
+    <button [routerLink]="['/movies/create-movie']" type="button" class="create-new-button">Create new</button>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div *ngFor="let item of movieList" class="col">
+            <div class="card h-100">
+                <img *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Movie Image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{item?.title}}</h5>
+                    <h5 class="card-title">Category: {{ item?.categoryName }}</h5>
+                    <p class="card-text">{{item?.paragraph}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a [routerLink]="'/movies/edit-movie/' + item.id" [queryParams]="{ movieId: item.id}">
+                        <i class="fa fa-pencil green p-2 pointer"></i>
+                    </a>
+                    <a [routerLink]="'/movies/movie-details/' + item.id" [queryParams]="{ movieId: item.id}">
+                        <i class="fa fa-eye green p-2 pointer"></i>
+                    </a>
+                    <i class="fa fa-trash text-danger p-2 pointer" (click)="deleteMovie(item)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+  
+  
+  
+  
+  <div *ngIf="deleteMovieModal" class="delete-modal">
+    <div class="delete-modal-header">
+     <h3 class="delete-modal-header-title" >Delete Movie</h3>
+    </div>
+    <div class="delete-modal-content">
+      <h4>  Are you sure you want to proceed with the deletion of <b> {{clickedMovieData.title + ' Title' }}</b>?</h4> 
+    </div>
+    <div class="delete-modal-footer">
+        <button type="button" class="delete-button bg-danger" (click)="deleteMovieFromTable(clickedMovieData.id)">Delete</button>
+        <button type="button" class="create-new-button" (click)="closeDeleteMovieModal()">Cancel</button>
+   
+    </div>
+  
+  </div>
