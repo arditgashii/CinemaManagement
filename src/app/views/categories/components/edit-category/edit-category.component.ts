@@ -12,9 +12,12 @@ export class EditCategoryComponent implements OnInit {
   editCategoryForm:any = FormGroup
   categoryDetails:any
   categoryId:any
-  constructor(private route:ActivatedRoute, 
+
+  constructor(
+    private route:ActivatedRoute, 
     private categoryService:CategoryService,
-    private router:Router) { }
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {

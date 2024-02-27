@@ -14,16 +14,6 @@ export class CreateMovieComponent implements OnInit {
   createMovieForm!: FormGroup;
   categoryList: any[] = [];
 
-  onFileChange(event: any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-        const base64Data = reader.result as string;
-        this.createMovieForm.patchValue({ imageUrl: base64Data });
-    };
-    reader.readAsDataURL(file);
-}
-
   constructor(
     private movieService:MovieService,
     private categoryService: CategoryService,
@@ -40,6 +30,16 @@ export class CreateMovieComponent implements OnInit {
 
     this.categoryList = this.categoryService.getCategories();
   }
+
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        const base64Data = reader.result as string;
+        this.createMovieForm.patchValue({ imageUrl: base64Data });
+    };
+    reader.readAsDataURL(file);
+}
 
   onSubmit() {
     if (this.createMovieForm.valid) {

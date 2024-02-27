@@ -1,19 +1,27 @@
-
-
-
 <div class="container-fluid">
     <div class="header">
-        <h1>{{movieDetails?.title + ' ' + ' details'}}</h1>
+        <h1>{{ movieDetails?.title + ' ' + ' details' }}</h1>
     </div>
     <div class="movie-details">
         <ng-container *ngIf="movieDetails.title">
             <div>
                 <label for="title"><b>Title:</b></label>
-                <p>{{movieDetails?.title}}</p>
+                <p>{{ movieDetails?.title }}</p>
             </div>
+
             <div>
                 <label for="categoryname"><b>Name of Category:</b></label>
-                <p>{{movieDetails?.categoryName}}</p>
+                <p>{{ categoryDetails?.categoryName }}</p>
+            </div>
+
+            <div *ngIf="movieDetails?.imageUrl">
+                <label for="image"><b>Image:</b></label>
+                <img [src]="movieDetails.imageUrl" alt="Movie Image" class="movie-image">
+            </div>
+
+            <div>
+                <label for="paragraph"><b>Paragraph:</b></label>
+                <p>{{ movieDetails?.paragraph }}</p>
             </div>
         </ng-container>
     </div>

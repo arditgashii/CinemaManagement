@@ -1,15 +1,28 @@
 <div class="main-content">
     <form [formGroup]="editMovieForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="title">Task Title:</label>
-        <input type="text" id="title" formControlName="title" required>
-      </div>
-      <div class="form-group">
-        <label for="categoryId">Title:</label>
-        <select id="categoryId" formControlName="categoryId" required>
-            <option *ngFor="let category of categoryList" [value]="category.id">{{ category.categoryName }}</option>
-        </select>
-    </div>
-      <button type="submit" class="btn btn-primary" [disabled]="!editMovieForm.valid">Update Task</button>
+        <div class="form-group">
+            <label for="title">Movie Title:</label>
+            <input type="text" id="title" formControlName="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="categoryId">Name of Category:</label>
+            <select id="categoryId" formControlName="categoryId" required>
+                <option *ngFor="let category of categoryList" [value]="category.id">{{ category.categoryName }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" (change)="onFileChange($event)" accept="image/*">
+            <img *ngIf="editMovieForm.value.imageUrl" [src]="editMovieForm.value.imageUrl" alt="Preview" class="img-preview">
+        </div>
+
+        <div class="form-group">
+            <label for="paragraph">Paragraph:</label>
+            <textarea id="paragraph" formControlName="paragraph" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!editMovieForm.valid">Update Task</button>
     </form>
-  </div>
+</div>

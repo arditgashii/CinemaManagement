@@ -9,26 +9,31 @@ import { CategoryService } from 'src/app/views/categories/categories-service';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  movieDetails:any
-  categoryDetails:any
-  movieId:any
-  constructor(
-    private movieService:MovieService,
-    private categoryService:CategoryService,
-    private router:ActivatedRoute) {
-      this.router.queryParams.subscribe(params => {
-        this.movieId = params['movieId'];
-      });
+  movieDetails: any;
+  categoryDetails: any;
+  movieId: any;
 
+  constructor(
+    private movieService: MovieService,
+    private categoryService: CategoryService,
+    private router: ActivatedRoute
+  ) {
+    this.router.queryParams.subscribe(params => {
+      this.movieId = params['movieId'];
+    });
   }
-              
 
   ngOnInit(): void {
-    this.fetchMovieDetails()
+    this.fetchMovieDetails();
   }
 
   fetchMovieDetails() {
-    this.movieDetails = this.movieService.getMovieById(JSON.parse(this.movieId))
-    this.categoryDetails = this.categoryService.getCategoryById(JSON.parse(this.movieId))
+    // Convert the movieId to a numeric value before passing it to getMovieById
+    const numericMovieId = parseInt(this.movieId, 10);
+    this.movieDetails = this.movieService.getMovieById(numericMovieId);
+    // Assuming there's a categoryId property in movieDetails, you can use it to get category details
+    if (this.movieDetails) {
+      this.categoryDetails = this.categoryService.getCategoryById(this.movieDetails.categoryId);
+    }
   }
 }
