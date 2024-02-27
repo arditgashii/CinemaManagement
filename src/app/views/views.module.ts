@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ViewsComponent } from './views.component';
 import { ViewsRoutingModule } from './views-routing.module';
 import { RouterModule } from '@angular/router';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 
 @NgModule({
   declarations: [
-    ViewsComponent
+    ViewsComponent,
+    HomepageComponent
   ],
   imports: [
     CommonModule,
