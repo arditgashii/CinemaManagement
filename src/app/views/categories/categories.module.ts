@@ -5,6 +5,9 @@ import { AllCategoriesComponent } from './components/all-categories/all-categori
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
 import { CategoryDetailsComponent } from './components/category-details/category-details.component';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CategoriesRoutingModule } from './categories-routing.module';
 
 
 
@@ -17,7 +20,10 @@ import { CategoryDetailsComponent } from './components/category-details/category
     CategoryDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CategoriesRoutingModule,
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class CategoriesModule { }

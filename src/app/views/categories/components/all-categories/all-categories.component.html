@@ -1,1 +1,46 @@
-<p>all-categories works!</p>
+<div class="main-content">
+    <button [routerLink]="['/create-category']"  type="button" class="create-new-button">Create new</button>
+    <table class="table align-middle mb-0 bg-white">
+        <thead>
+          <tr>
+            <th>Category Name</th>
+            <th class="text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of categoryList">
+            <td>
+                {{item?.categoryName}}
+            </td>
+            <td class="text-right">
+              <a [routerLink]="'/edit-category/' + item.id" [queryParams]="{ categoryId: item.id}">
+                 <i class="fa fa-pencil green p-2 pointer"></i>
+              </a>
+              <a [routerLink]="'/category-details/' + item.id" [queryParams]="{ categoryId: item.id}">
+                <i class="fa fa-eye green p-2 pointer"></i>
+             </a>
+             <i class="fa fa-trash text-danger p-2 pointer" (click)="deleteCategory(item)"></i>
+  
+            </td>
+          </tr>
+  
+  
+  
+        </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="deleteCategoryModal" class="delete-modal">
+    <div class="delete-modal-header">
+     <h3 class="delete-modal-header-title" >Delete Category</h3>
+    </div>
+    <div class="delete-modal-content">
+      <h4>  Are you sure you want to proceed with the deletion of <b> {{ clickedCategoryData.categoryName }} Category</b>?</h4> 
+    </div>
+    <div class="delete-modal-footer">
+        <button type="button" class="delete-button bg-danger" (click)="deleteCategoryFromTable(clickedCategoryData.id)">Delete</button>
+        <button type="button" class="create-new-button" (click)="closeDeleteCategoryModal()">Cancel</button>
+  
+    </div>
+  
+  </div>
