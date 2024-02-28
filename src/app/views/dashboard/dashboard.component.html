@@ -1,0 +1,36 @@
+<div class="container-fluid p-0 d-flex h-100">
+    <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-info text-white offcanvas-md offcanvas-start">
+        <a routerLink="categories" class="navbar-brand"><i class="fa fa-ticket fa-lg"></i> Cinema Management</a>
+        <hr>
+        <ul class="mynav nav nav-pills flex-column mb-auto">
+            <li class="nav-item mb-1">
+                <a routerLinkActive="active" routerLink="/categories/all-categories">
+                    <i class="fa fa-list-alt fa-lg"></i>
+                    Categories
+                </a>
+            </li>
+            <li class="nav-item mb-1">
+                <a routerLinkActive="active" routerLink="/movies/all-movies">
+                    <i class="fa fa-film"></i>
+                    Movies
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="bg-light flex-fill">
+        <div class="p-2 d-md-none d-flex text-white bg-success">
+            <a href="#" class="text-white" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar">
+                <i class="fa fa-bars"></i>
+            </a>
+            <span class="ms-3"></span>
+        </div>
+        <div class="p-4 content">
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
