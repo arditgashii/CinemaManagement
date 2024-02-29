@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { log } from 'console';
 import { MovieService } from '../../movies-service';
 import { CategoryService } from 'src/app/views/categories/categories-service';
+import { MovieSharedService } from '../../movie-shared.service';
+
 
 @Component({
   selector: 'app-all-movies',
@@ -13,7 +15,12 @@ export class AllMoviesComponent implements OnInit {
   categoryList: any[] = [];
   deleteMovieModal:boolean = false
   clickedMovieData:any
-  constructor(private movieService:MovieService, private categoryService: CategoryService) { }
+
+  constructor(
+    private movieService:MovieService,
+    private categoryService: CategoryService,
+    private movieSharedService: MovieSharedService
+     ) { }
 
   ngOnInit(): void {
     this.fetchMovies();
@@ -23,20 +30,25 @@ export class AllMoviesComponent implements OnInit {
   fetchMovies() {
     const movies = this.movieService.getMovies();
     this.categoryList = this.categoryService.getCategories();
-  
-    this.movieList = movies.map(movie => {
+
+    this.movieList = movies.map((movie) => {
       const category = this.categoryService.getCategoryById(movie.categoryId);
       const updatedMovie = {
         ...movie,
-        categoryName: category ? category.categoryName : ''
+        categoryName: category ? category.categoryName : '',
       };
-  
+
       console.log('Updated Movie:', updatedMovie);
-  
+
       return updatedMovie;
     });
+
+    console.log('Movies before setting:', this.movieList);
+this.movieSharedService.setMovies(this.movieList);
+console.log('Movies after setting:', this.movieSharedService.getMovies());
   }
 
+  
   fetchCategories() {
     this.categoryList = this.categoryService.getCategories();
     console.log('Category List:', this.categoryList);
