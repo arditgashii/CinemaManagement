@@ -20,9 +20,11 @@ export class HomepageComponent implements OnInit {
   }
 
   fetchMovies() {
-    this.movieList = this.movieService.getMovies();
+    this.movieList = this.movieService.getMovies().map(item => {
+      item.categoryId = item.categoryId || 'Unknown Category';
+      return item;
+    });
   }
-
   navigateToDashboard(): void {
     this.router.navigateByUrl('/dashboard');
   }

@@ -23,7 +23,7 @@
       <div class="card h-100 movie-card">
         <div class="card-img-overlay">
           <h5 class="card-title card-details">{{item?.title}}</h5>
-          <h5 class="card-title card-details">Category: {{ item?.categoryName }}</h5>
+          <h5 class="card-title card-details">{{ item?.categoryName }}</h5>
           <p class="card-text card-details">{{item?.paragraph}}</p>
         </div>
         <img *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Movie Image" class="card-img-top">

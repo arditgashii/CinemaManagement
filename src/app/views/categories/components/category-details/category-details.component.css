@@ -8,3 +8,37 @@
     width: 100%;
     justify-content: space-between;
 }
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust as needed */
+  }
+  
+  .header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .category-details {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add more styling as needed */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    margin: 0;
+  }
+  

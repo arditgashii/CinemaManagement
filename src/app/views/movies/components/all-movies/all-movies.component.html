@@ -1,30 +1,37 @@
 <div class="main-content">
     <button [routerLink]="['/movies/create-movie']" type="button" class="create-new-button">Create new</button>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div *ngFor="let item of movieList" class="col">
-            <div class="card h-100">
-                <img *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Movie Image" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{item?.title}}</h5>
-                    <h5 class="card-title">Category: {{ item?.categoryName }}</h5>
-                    <p class="card-text">{{item?.paragraph}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <a [routerLink]="'/movies/edit-movie/' + item.id" [queryParams]="{ movieId: item.id}">
-                        <i class="fa fa-pencil green p-2 pointer"></i>
-                    </a>
-                    <a [routerLink]="'/movies/movie-details/' + item.id" [queryParams]="{ movieId: item.id}">
-                        <i class="fa fa-eye green p-2 pointer"></i>
-                    </a>
-                    <i class="fa fa-trash text-danger p-2 pointer" (click)="deleteMovie(item)"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
   
-  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Title</th>
+          <th scope="col">Category</th>
+          <th scope="col">Paragraph</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of movieList">
+          <td>
+            <img *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Movie Image" class="movie-image">
+          </td>
+          <td>{{item?.title}}</td>
+          <td>{{ item?.categoryName }}</td>
+          <td>{{item?.paragraph}}</td>
+          <td>
+            <a [routerLink]="'/movies/edit-movie/' + item.id" [queryParams]="{ movieId: item.id}">
+              <i class="fa fa-pencil green p-2 pointer"></i>
+            </a>
+            <a [routerLink]="'/movies/movie-details/' + item.id" [queryParams]="{ movieId: item.id}">
+              <i class="fa fa-eye green p-2 pointer"></i>
+            </a>
+            <i class="fa fa-trash text-danger p-2 pointer" (click)="deleteMovie(item)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   
   
   

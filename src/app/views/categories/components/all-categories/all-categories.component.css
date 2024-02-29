@@ -1,14 +1,41 @@
-.table{
+.main-content {
+    padding: 20px;
+  }
+  
+  .create-new-button {
+    margin-bottom: 20px;
     padding: 10px;
-    border-radius: 10px;
-    
-}
-
-th {
-    background: #198754;
+    background-color: #3498db;
     color: #fff;
-    height: 40px;
-}
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
 .delete-modal{
     background-color: #fff;
     border: 1px solid lightgrey;
