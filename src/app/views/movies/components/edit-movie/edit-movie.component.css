@@ -1,35 +1,36 @@
-.edit-movie-form {
-    margin: 20px;
-    padding: 20px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 14px;
-  }
-  
-  .btn-primary {
-    background-color: #198754;
-    border-color: #198754;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-  }
-  
-  .btn-primary:disabled {
-    background-color: #ccc;
-    border-color: #ccc;
-  }
-  
+.main-content form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content form label {
+  font-weight: bold;
+}
+
+.main-content form input,
+.main-content form select,
+.main-content form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.main-content form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main-content form button:hover {
+  background-color: #0056b3;
+}

@@ -1,28 +1,30 @@
-<div class="container-fluid">
-    <div class="header">
-        <h1>{{ movieDetails?.title + ' ' + ' details' }}</h1>
+<div class="details-container">
+    <h2 class="mb-5 mt-3">{{movieDetails?.title + ' ' + ' details'}}</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+            <ng-container *ngIf="movieDetails.title">
+                <div>
+                    <label for="title"><b>Title:</b></label>
+                    <p>{{ movieDetails?.title }}</p>
+                </div>
+    
+                <div>
+                    <label for="categoryname"><b>Name of Category:</b></label>
+                    <p>{{ categoryDetails?.categoryName }}</p>
+                </div>
+    
+                <div *ngIf="movieDetails?.imageUrl">
+                    <label for="image"><b>Image:</b></label>
+                    <img [src]="movieDetails.imageUrl" alt="Movie Image" class="movie-image">
+                </div>
+    
+                <div>
+                    <label for="paragraph"><b>Paragraph:</b></label>
+                    <p>{{ movieDetails?.paragraph }}</p>
+                </div>
+            </ng-container>
+        </div>
+      </div>
     </div>
-    <div class="movie-details">
-        <ng-container *ngIf="movieDetails.title">
-            <div>
-                <label for="title"><b>Title:</b></label>
-                <p>{{ movieDetails?.title }}</p>
-            </div>
-
-            <div>
-                <label for="categoryname"><b>Name of Category:</b></label>
-                <p>{{ categoryDetails?.categoryName }}</p>
-            </div>
-
-            <div *ngIf="movieDetails?.imageUrl">
-                <label for="image"><b>Image:</b></label>
-                <img [src]="movieDetails.imageUrl" alt="Movie Image" class="movie-image">
-            </div>
-
-            <div>
-                <label for="paragraph"><b>Paragraph:</b></label>
-                <p>{{ movieDetails?.paragraph }}</p>
-            </div>
-        </ng-container>
-    </div>
-</div>
+  </div>

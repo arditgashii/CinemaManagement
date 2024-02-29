@@ -1,61 +1,43 @@
 .create-movie-form {
-    margin: 20px;
-    padding: 20px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 14px;
-  }
-  .btn-primary {
-    background-color: #198754;
-    border-color: #198754;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-  }
-  .btn-primary:disabled {
-    background-color: #ccc;
-    border-color: #ccc;
-  }.create-movie-form {
-    margin: 20px;
-    padding: 20px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 14px;
-  }
-  .btn-primary {
-    background-color: #198754;
-    border-color: #198754;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-  }
-  .btn-primary:disabled {
-    background-color: #ccc;
-    border-color: #ccc;
-  }
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-movie-form label {
+  font-weight: bold;
+}
+
+.create-movie-form input,
+.create-movie-form select,
+.create-movie-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da; /* Bootstrap input border color */
+  border-radius: 5px;
+}
+
+.create-movie-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Bootstrap primary color for button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-movie-form button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.center{
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

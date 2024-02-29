@@ -1,4 +1,11 @@
-
+.create-new-button {
+    margin-bottom: 15px;
+  }
+  
+  .card {
+    margin-bottom: 15px;
+  }
+  
 .delete-modal{
     background-color: #fff;
     border: 1px solid lightgrey;
