@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a routerLink="/" class="navbar-brand"><i class="fa fa-ticket fa-lg"></i> Cinema Management</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,17 +16,17 @@
   </div>
 </nav>
 
-<div class="container mt-4">
-  <h2>Latest Movies</h2>
+<div class="container-fluid homepage-container">
+  <h2 class="latest-movies-heading mb-5 mt-3">Latest Movies</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let item of movieList" class="col">
-      <div class="card h-100">
-        <img *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Movie Image" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{item?.title}}</h5>
-          <h5 class="card-title">Category: {{ item?.categoryName }}</h5>
-          <p class="card-text">{{item?.paragraph}}</p>
+      <div class="card h-100 movie-card">
+        <div class="card-img-overlay">
+          <h5 class="card-title card-details">{{item?.title}}</h5>
+          <h5 class="card-title card-details">Category: {{ item?.categoryName }}</h5>
+          <p class="card-text card-details">{{item?.paragraph}}</p>
         </div>
+        <img *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Movie Image" class="card-img-top">
       </div>
     </div>
   </div>

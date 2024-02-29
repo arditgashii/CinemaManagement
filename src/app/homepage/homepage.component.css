@@ -1,0 +1,69 @@
+.homepage-container {
+    background-color: #FF3CAC;
+background-image: -webkit-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+background-image: -moz-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+background-image: -o-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+  }
+
+  
+  
+  .row-cols-5 {
+    margin: -15px;
+  }
+  
+  .col {
+    flex: 0 0 20%; /* Each card takes up 20% of the container width */
+    max-width: 20%;
+    padding: 15px;
+  }
+  
+  .movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 300px; /* Adjust the fixed height as needed */
+  }
+  
+  .movie-card .card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Adjust background color and transparency as needed */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .movie-card:hover .card-img-overlay {
+    opacity: 1;
+  }
+  
+  .card-details {
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .movie-card .card-img-top {
+    width: 100%;
+    height: 100%; /* Ensure the image covers the entire card */
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  

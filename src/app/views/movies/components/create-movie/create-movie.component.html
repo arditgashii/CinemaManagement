@@ -1,4 +1,8 @@
-<div class="create-movie-form">
+<div class="center">
+  <div class="create-movie-form">
+    <div class="text-center">
+      <h3 class="pb-3"><i class="fa fa-plus-circle"></i> Create a new Movie</h3>
+    </div>
     <form [formGroup]="createMovieForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="title">Movie Title:</label>
@@ -26,3 +30,4 @@
     </form>
   </div>
   
+</div>
