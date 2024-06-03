@@ -1,7 +1,6 @@
 .mynav {
     color: #fff;
     }
-     
     
     .mynav li a {
     color: #fff;
@@ -11,7 +10,7 @@
     border-radius: 5px;
     padding: 10px 25px;
     }
-     
+    
     
     .mynav li a.active {
     background: rgba(255, 255, 255, 0.2)!important;

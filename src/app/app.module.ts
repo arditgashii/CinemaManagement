@@ -12,7 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';  // Add this 
   declarations: [
     AppComponent,
     DashboardComponent,
-    HomepageComponent,  // Add this line
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
